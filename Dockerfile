@@ -37,3 +37,6 @@ RUN sudo apt-get -y upgrade
 RUN sudo apt-get install -y build-essential
 RUN sudo apt-get install -y manpages-dev
 RUN sudo apt-get install -y gdb
+
+#Disable ASLR
+RUN echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
