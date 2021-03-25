@@ -29,6 +29,11 @@ ENV PORT=8080
 COPY deploy-container/entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
 ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
 
+#Update and Upgrade
+RUN sudo apt-get update
+RUN sudo apt-get -y upgrade
+
 #Install C/C++ Toolchain
 RUN sudo apt-get install -y build-essential
 RUN sudo apt-get install -y manpages-dev
+RUN sudo apt-get install -y gdb
