@@ -39,4 +39,4 @@ RUN sudo apt-get install -y manpages-dev
 RUN sudo apt-get install -y gdb
 
 #Disable ASLR
-RUN setarch `uname -m` -R /usr/bin/gdb
+RUN sudo setarch `uname -m` -R /usr/bin/gdb
