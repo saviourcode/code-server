@@ -39,4 +39,4 @@ RUN sudo apt-get install -y manpages-dev
 RUN sudo apt-get install -y gdb
 
 #Disable ASLR
-RUN echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
+RUN setarch `uname -m` -R /usr/bin/gdb
